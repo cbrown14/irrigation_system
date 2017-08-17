@@ -1,0 +1,36 @@
+# This is a configuration file for setting up the sprinkler schedule.
+
+[SprinklerConfig] # don't edit this line
+####
+## Provide API key.  A free developer's API key is available
+# here: https://www.wunderground.com/weather/api/d/pricing.html
+api_key = 1a1d39aab5ea165c 
+
+####
+## Town and state where sprinkler is being run.  Cities 
+# with two or more words should use underscores for spaces, 
+# e.g. New_York
+town = Toledo
+state = OR
+
+####
+## How long in minutes to run the sprinkler at a time
+
+####
+## Rain threshold.  If daily rainfall (in inches) exceeds this amount,
+# the sprinkler will not run.  
+rain_threshold_in = 0.01
+
+####
+## GPIO pins to control the sprinkler and the status LEDs
+zone0_gpio = 18
+zone1_gpio = 24
+
+
+####
+## Choose location and name of log file
+log_file = /home/pi/test_stuff/sprinkler.log
+
+zone0_time = 30
+zone1_time = 30
+number_of_zones = 2
