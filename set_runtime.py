@@ -6,12 +6,12 @@ if(len(sys.argv)<2):
 	exit()
 
 
-f = open("/home/pi/test_stuff/config","r")
+f = open("/home/pi/irrigation_system/config","r")
 
 lines = f.readlines()
 f.close()
 
-f = open("/home/pi/test_stuff/config","w")
+f = open("/home/pi/irrigation_system/config","w")
 
 for line in lines:
 	if "_time" not in line and "_zones" not in line:

@@ -8,7 +8,7 @@ and get the run times for each zone, in order
 
 def load_config(filename='config'):
   config = ConfigParser.RawConfigParser()
-  config.read('/home/pi/test_stuff/config')
+  config.read('/home/pi/irrigation_system/config')
   if config.has_section('SprinklerConfig'):
       return {name:val for (name, val) in config.items('SprinklerConfig')}
   else:

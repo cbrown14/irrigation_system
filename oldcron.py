@@ -11,8 +11,8 @@ import re
 def main():
 	cron = CronTab(user="root")
 	cron.write("outcron.tab")
-
 	file = open("outcron.tab","r")
+	
 	for line in file:
 		if(line[0] == "*" or isNum(line[0])):
 			list = re.findall(r"[\w']+",line)			

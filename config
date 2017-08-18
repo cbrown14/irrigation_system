@@ -29,7 +29,7 @@ zone1_gpio = 24
 
 ####
 ## Choose location and name of log file
-log_file = /home/pi/test_stuff/sprinkler.log
+log_file = /home/pi/irrigation_system/sprinkler.log
 
 zone0_time = 30
 zone1_time = 30

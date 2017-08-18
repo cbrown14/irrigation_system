@@ -1094,3 +1094,24 @@ LOG FILE
 2017-08-17 06:30:12: Starting sprinkler for zone 1 
 2017-08-17 07:00:12: Stopping sprinkler for zone 1 
 
+2017-08-17 17:46:20: Rainfall: 0.000000 inches
+2017-08-17 17:46:25: An error has occurred: No access to /dev/mem.  Try running as root! 
+2017-08-17 17:46:33: Rainfall: 0.000000 inches
+2017-08-17 17:46:41: Force stopped sprinkler for zone 0 
+2017-08-17 17:46:42: Force stopped sprinkler for zone 1 
+
+2017-08-17 17:47:02: Rainfall: 0.000000 inches
+2017-08-17 17:47:04: Force stopped sprinkler for zone 0 
+2017-08-17 17:47:05: Force stopped sprinkler for zone 1 
+
+2017-08-17 17:49:02: Rainfall: 0.000000 inches
+2017-08-17 17:51:56: Force stopped sprinkler for zone 0 
+2017-08-17 17:51:57: Force stopped sprinkler for zone 1 
+
+2017-08-17 17:53:25: Force stopped sprinkler for zone 0 
+2017-08-17 17:53:26: Force stopped sprinkler for zone 1 
+
+2017-08-17 17:53:29: Force stopped sprinkler for zone 0 
+2017-08-17 17:53:30: Force stopped sprinkler for zone 1 
+
+2017-08-17 18:00:03: Rainfall: 0.000000 inches

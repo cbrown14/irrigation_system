@@ -1,13 +1,40 @@
 #!/usr/bin/env python
 
-import ConfigParser
-import os
-import sys
-import datetime
 from time import sleep
 import RPi.GPIO as GPIO
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
+import ConfigParser
+import sys
+import string
+import re
+import datetime
+import os
+
+def determine():
+
+	sprinkler_times = []
+	runtime = 0
+
+	for i in sys.argv[1:]:
+		if ':' in i:
+			i = re.sub(':','',i)
+			sprinkler_times.append(i)
+		else:
+			runtime += int(i)	
+
+	dt = datetime.datetime.now()	
+	dt = str(dt)
+	list = dt.split(" ")
+	timelist = list[1].split(":")
+	cur_time = timelist[0] + timelist[1]
+	
+	for time in sprinkler_times:
+		if ( int(cur_time) < int(time)  or (int(time)+runtime) < int(cur_time) ):
+			continue
+		else:
+			return False
+	return True
 
 def now():
         return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -16,7 +43,7 @@ def now():
 def load_config(filename='config'):
   config = ConfigParser.RawConfigParser()
   this_dir = os.path.abspath(os.path.dirname(__file__))
-  config.read(this_dir + '/' + filename)
+  config.read(config.read(this_dir + '/' + filename)
   if config.has_section('SprinklerConfig'):
       return {name:val for (name, val) in config.items('SprinklerConfig')}
   else:
@@ -52,9 +79,13 @@ def force_stop(config):
 
 
 def main():
-  # Load configuration file
-  config = load_config()
-  force_stop(config)
+  turn_off = determine()
+  print turn_off  
+  if turn_off:
+	os.system("pgrep -f 2zone | xargs sudo kill");
+	config = load_config()
+  	force_stop(config)
+
+
 
 main()
-	
